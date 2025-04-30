@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-assignment
+spec:
+  replicas: 3
+  template:
+    spec:
+      containers:
+      - name: devops-assignment
+        image: arkashira/devops-assignment:v1.0.0
+        env:
+        - name: ENV_VAR_1
+          value: "prod_value"

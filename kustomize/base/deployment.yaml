@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-assignment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-assignment
+  template:
+    metadata:
+      labels:
+        app: devops-assignment
+    spec:
+      containers:
+      - name: devops-assignment
+        image: arkashira/devops-assignment:v1.0.0 # Default image
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ENV_VAR_1
+          value: "default_value"
